@@ -66,4 +66,75 @@ Yes, on our website.
 Regularly, check the changelog for details.
 
 ## 20. Can I request features?
-Yes, submit your ideas on GitHub.
+Yes, submit your ideas on GitHub.jorel666
+
+
+# Preguntas Frecuentes
+
+## 1. ¿Necesito una GPU?
+No.
+
+## 2. ¿Funciona sin conexión?
+Sí, 100%.
+
+## 3. ¿Puedo usarlo en producción?
+Sí, con soporte 24/7.
+
+## 4. ¿Qué sistemas operativos son compatibles?
+Ubuntu, WSL2, macOS.
+
+## 5. ¿Cuáles son las diferencias entre los chips?
+- TITAN
+- MONSTER
+- COLOSSUS
+- NEMESIS
+
+## 6. ¿Qué es el motor de memoria fractal XIPE TOTEC?
+Un motor propietario de gestión de memoria diseñado para la eficiencia.
+
+## 7. ¿Cuáles son los planes de precios?
+- Prueba
+- Personal
+- Profesional
+- Empresarial
+
+## 8. ¿Cuál es la hoja de ruta del proyecto?
+- T3 2026
+- T4 2026
+
+## 9. ¿Es la seguridad una prioridad?
+Absolutamente.
+
+## 10. ¿Cumple con el RGPD (GDPR)?
+Sí.
+
+## 11. ¿Es compatible con HIPAA?
+Sí.
+
+## 12. ¿Tiene certificación SOC2?
+Sí.
+
+## 13. ¿Cómo puedo enviar comentarios?
+Contáctanos a través de la página de soporte.
+
+## 14. ¿Cuáles son los requisitos de hardware?
+Consulta la guía de instalación.
+
+## 15. ¿Puedo integrarlo con sistemas existentes?
+Sí, con las API adecuadas.
+
+## 16. ¿Dónde puedo encontrar la documentación?
+Visita nuestra página de documentación.
+
+## 17. ¿Hay tutoriales disponibles?
+Sí, en nuestro sitio web.
+
+## 18. ¿Qué opciones de soporte están disponibles?
+- Foros de la comunidad
+- Soporte por correo electrónico
+
+## 19. ¿Con qué frecuencia se actualiza?
+Regularmente, consulta el registro de cambios para más detalles.
+
+## 20. ¿Puedo solicitar funciones?
+Sí, envía tus ideas en GitHub.jorel666
