@@ -1,7 +1,3 @@
-Aquí tienes la traducción completa al inglés del bloque proporcionado, que incluye la explicación técnica de NEMESIS vs COLOSSUS, la evidencia experimental, la nota sobre los modelos tradicionales y el script de diagnóstico. Se mantiene todo el formato original.
-
----
-
 # Benchmark Data
 
 ### ⚡ Why Is NEMESIS (3.2B) Faster Than COLOSSUS (2.4B)?
