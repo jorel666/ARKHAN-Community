@@ -1,5 +1,3 @@
-**English Translation:**
-
 *Timestamps:*
 - *2026-04-20 02:05:53:*
   - *TITAN online: RAM 5.8G, CPU 12%*
