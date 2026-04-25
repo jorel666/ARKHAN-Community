@@ -1,0 +1,43 @@
+name: ARKHAN Daily Signals
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  signals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Generate Market Report
+        run: |
+          python3 -c "
+import urllib.request, json
+from datetime import datetime
+
+symbols = ['BTCUSDT','ETHUSDT','SOLUSDT','BNBUSDT','XRPUSDT']
+prices = {}
+for sym in symbols:
+    try:
+        d = json.loads(urllib.request.urlopen(f'https://api.binance.com/api/v3/ticker/24hr?symbol={sym}', timeout=5).read())
+        prices[sym.replace('USDT','')] = {'price': float(d['lastPrice']), 'change': float(d['priceChangePercent'])}
+    except: pass
+
+report = f'## ARKHAN Market Update — {datetime.now().strftime(\"%Y-%m-%d %H:%M UTC\")}\n\n'
+for sym, d in prices.items():
+    e = '🟢' if d['change'] > 0 else '🔴'
+    report += f'{e} **{sym}**: \${d[\"price\"]:,.2f} ({d[\"change\"]:+.2f}%)\n'
+report += '\n*Signals bot: [@Chimeraghost_bot](https://t.me/Chimeraghost_bot)*\n'
+
+with open('MARKET_SIGNALS.md','w') as f: f.write(report)
+print(report)
+"
+      - name: Commit signals
+        run: |
+          git config user.name "ARKHAN Bot"
+          git config user.email "arkhan@fractalai.io"
+          git add MARKET_SIGNALS.md
+          git diff --staged --quiet || git commit -m "ARKHAN signals $(date +%H:%M)"
+          git push
