@@ -1,0 +1,113 @@
+:root {
+  --bg: #0e0a14;
+  --bg-2: #1a1126;
+  --fg: #f4ecdf;
+  --muted: #b6a99a;
+  --accent: #e85d3a;
+  --accent-2: #f2c14e;
+  --line: rgba(244, 236, 223, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(1200px 800px at 80% -10%, var(--bg-2), var(--bg) 60%);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.lang a {
+  color: var(--muted);
+  text-decoration: none;
+  margin: 0 0.25rem;
+  font-size: 0.9rem;
+}
+.lang a.active { color: var(--accent-2); }
+.lang a:hover { color: var(--fg); }
+
+.hero {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
+  background: linear-gradient(90deg, var(--fg), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lede {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0 0 3rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 0 0 3rem;
+}
+
+.grid article {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: rgba(255,255,255,0.02);
+}
+
+.grid h2 {
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+}
+
+.grid p { margin: 0; color: var(--muted); }
+
+.cta { margin-top: 2rem; }
+.button {
+  display: inline-block;
+  padding: 0.7rem 1.1rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--fg);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.button:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--muted);
+}
