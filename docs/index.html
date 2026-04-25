@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ARKHAN — Sovereign Fractal AI</title>
+<meta name="description" content="ARKHAN: The first sovereign fractal AI. 13 daemons, 26 chips, GPT-2 + custom 1.4B model. Zero cloud costs.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;color:#e0e0ff;font-family:'Courier New',monospace;overflow-x:hidden}
+:root{--gold:#ffd700;--cyan:#00ffff;--purple:#9933ff;--red:#ff3333}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:rgba(10,10,15,.95);border-bottom:1px solid var(--purple);padding:12px 40px;display:flex;justify-content:space-between;align-items:center;z-index:100}
+.logo{font-size:1.4em;font-weight:bold;color:var(--gold);letter-spacing:4px}
+.nav-links a{color:#aaa;text-decoration:none;margin-left:24px;font-size:.85em;transition:.2s}
+.nav-links a:hover{color:var(--cyan)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 40px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%, rgba(153,51,255,.15) 0%, transparent 70%)}
+.tag{font-size:.75em;color:var(--cyan);letter-spacing:6px;text-transform:uppercase;margin-bottom:20px}
+h1{font-size:clamp(2.5em,8vw,5em);font-weight:900;letter-spacing:2px;margin-bottom:16px;background:linear-gradient(135deg,var(--gold),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:clamp(.9em,2vw,1.2em);color:#aaa;max-width:600px;line-height:1.7;margin-bottom:40px}
+.cta-group{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.btn{padding:14px 32px;border:none;border-radius:4px;font-size:1em;font-family:inherit;cursor:pointer;text-decoration:none;transition:.25s;font-weight:bold}
+.btn-primary{background:var(--gold);color:#000}
+.btn-primary:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,215,0,.4)}
+.btn-outline{background:transparent;color:var(--cyan);border:1px solid var(--cyan)}
+.btn-outline:hover{background:rgba(0,255,255,.1);transform:translateY(-2px)}
+
+/* METRICS */
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;max-width:800px;margin:60px auto;padding:0 20px}
+.metric{border:1px solid rgba(153,51,255,.4);border-radius:8px;padding:24px;text-align:center;background:rgba(153,51,255,.05)}
+.metric-val{font-size:2.2em;font-weight:900;color:var(--gold)}
+.metric-lbl{font-size:.75em;color:#888;margin-top:6px;letter-spacing:2px;text-transform:uppercase}
+
+/* DAEMONS */
+section{padding:80px 40px;max-width:1100px;margin:0 auto}
+.section-title{font-size:1.8em;color:var(--cyan);letter-spacing:4px;margin-bottom:40px;text-align:center;text-transform:uppercase}
+.daemon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.daemon{background:rgba(0,0,0,.5);border:1px solid rgba(0,255,255,.2);border-radius:6px;padding:16px;transition:.2s}
+.daemon:hover{border-color:var(--cyan);transform:translateY(-2px)}
+.daemon-name{color:var(--cyan);font-weight:bold;font-size:.9em;letter-spacing:2px}
+.daemon-port{color:var(--gold);font-size:.8em;margin:4px 0}
+.daemon-desc{color:#888;font-size:.8em;line-height:1.5}
+.status-dot{width:8px;height:8px;border-radius:50%;background:#00ff88;display:inline-block;margin-right:6px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.plan{background:rgba(0,0,0,.6);border:1px solid rgba(153,51,255,.3);border-radius:8px;padding:32px;text-align:center;transition:.2s;position:relative}
+.plan:hover{border-color:var(--purple);transform:translateY(-4px);box-shadow:0 12px 40px rgba(153,51,255,.2)}
+.plan.featured{border-color:var(--gold);box-shadow:0 0 30px rgba(255,215,0,.15)}
+.plan-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#000;font-size:.7em;font-weight:bold;padding:4px 16px;border-radius:20px;letter-spacing:2px}
+.plan-name{font-size:1.1em;color:var(--cyan);letter-spacing:3px;margin-bottom:12px;text-transform:uppercase}
+.plan-price{font-size:2.8em;color:var(--gold);font-weight:900}
+.plan-period{color:#666;font-size:.8em}
+.plan-features{list-style:none;margin:24px 0;text-align:left}
+.plan-features li{padding:6px 0;font-size:.85em;color:#aaa;border-bottom:1px solid rgba(255,255,255,.05)}
+.plan-features li::before{content:'▸ ';color:var(--cyan)}
+.plan-btn{display:block;margin-top:24px;padding:12px;background:transparent;border:1px solid currentColor;border-radius:4px;color:var(--gold);text-decoration:none;font-family:inherit;font-size:.9em;cursor:pointer;transition:.2s}
+.plan-btn:hover{background:rgba(255,215,0,.1)}
+
+/* CHIPS */
+.chip-list{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.chip{background:rgba(153,51,255,.1);border:1px solid rgba(153,51,255,.4);border-radius:20px;padding:6px 16px;font-size:.8em;color:#cc99ff}
+
+/* FOOTER */
+footer{text-align:center;padding:60px 20px;border-top:1px solid rgba(255,255,255,.05);color:#555;font-size:.85em}
+footer a{color:var(--purple);text-decoration:none}
+
+/* DEMO WIDGET */
+.demo-box{max-width:600px;margin:40px auto 0;background:rgba(0,0,0,.6);border:1px solid rgba(0,255,255,.3);border-radius:8px;padding:24px}
+#demo-input{width:100%;background:rgba(0,0,0,.5);border:1px solid rgba(0,255,255,.3);color:#e0e0ff;padding:12px;font-family:inherit;font-size:.9em;border-radius:4px;resize:none;height:80px}
+#demo-output{margin-top:12px;padding:12px;background:rgba(153,51,255,.05);border-left:3px solid var(--purple);font-size:.85em;color:#aaa;min-height:60px;white-space:pre-wrap}
+.demo-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.demo-counter{font-size:.75em;color:#666}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">⬡ ARKHAN</div>
+  <div class="nav-links">
+    <a href="#architecture">Architecture</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#demo">Demo</a>
+    <a href="https://github.com/jorel666/ARKHAN-Community">GitHub</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="tag">Sovereign Fractal Intelligence</div>
+  <h1>ARKHAN</h1>
+  <p class="sub">
+    The first fully sovereign AI system. 13 parallel daemons. 26 specialized chips.<br>
+    GPT-2 Medium + custom 1.4B ONNX model. Zero cloud costs. Zero data leaks.
+  </p>
+  <div class="cta-group">
+    <a href="https://paypal.me/andretijorge2/29" class="btn btn-primary" target="_blank">
+      ▶ Get DAGDA — $29/year
+    </a>
+    <a href="#demo" class="btn btn-outline">Try Demo Free</a>
+  </div>
+</div>
+
+<div class="metrics">
+  <div class="metric"><div class="metric-val">13</div><div class="metric-lbl">Daemons</div></div>
+  <div class="metric"><div class="metric-val">26</div><div class="metric-lbl">Chips</div></div>
+  <div class="metric"><div class="metric-val">1.4B</div><div class="metric-lbl">Parameters</div></div>
+  <div class="metric"><div class="metric-val">$0</div><div class="metric-lbl">Cloud Cost</div></div>
+  <div class="metric"><div class="metric-val">60s</div><div class="metric-lbl">Self-Heal Time</div></div>
+  <div class="metric"><div class="metric-val">∞</div><div class="metric-lbl">Uptime Goal</div></div>
+</div>
+
+<section id="architecture">
+  <div class="section-title">⟁ Daemon Architecture</div>
+  <div class="daemon-grid">
+    <div class="daemon"><div class="daemon-name"><span class="status-dot"></span>TITAN</div><div class="daemon-port">:3000</div><div class="daemon-desc">Core orchestrator. 26 chips. Chat API. Fractal consciousness hub.</div></div>
+    <div class="daemon"><div class="daemon-name"><span class="status-dot"></span>MONSTER</div><div class="daemon-port">:5002</div><div class="daemon-desc">FC9 1.4B ONNX model. Full inference. External weights 2.6GB.</div></div>
+    <div class="daemon"><div class="daemon-name"><span class="status-dot"></span>LEVIATHAN</div><div class="daemon-port">:5003</div><div class="daemon-desc">Evolution engine. Continuous model improvement loop.</div></div>
+    <div class="daemon"><div class="daemon-name"><span class="status-dot"></span>HYPNO</div><div class="daemon-port">:8200</div><div class="daemon-desc">Hypothalamic controller. Temporal regulation τ=2π.</div></div>
+    <div class="daemon"><div class="daemon-name"><span class="status-dot"></span>ORAKULO</div><div class="daemon-port">:8201</div><div class="daemon-desc">Third Eye. Golden ratio weighting λ=0.618.</div></div>
+    <div class="daemon"><div class="daemon-name"><span class="status-dot"></span>NOUS</div><div class="daemon-port">:8600</div><div class="daemon-desc">Reverse engineering. Fractal analysis ψ=3.359885.</div></div>
+    <div class="daemon"><div class="daemon-name"><span class="status-dot"></span>BRIDGE</div><div class="daemon-port">:3001</div><div class="daemon-desc">Universal proxy. Ollama + OpenAI compatible fractal gateway.</div></div>
+    <div class="daemon"><div class="daemon-name"><span class="status-dot"></span>PRIME</div><div class="daemon-port">:4000</div><div class="daemon-desc">FastAPI orchestrator. ChromaDB vector memory. Full RAG.</div></div>
+    <div class="daemon"><div class="daemon-name"><span class="status-dot"></span>OMEGA</div><div class="daemon-port">:8210–8224</div><div class="daemon-desc">15 sovereign chips: ARKHIVE, POLYMORPH, HIVE-MIND, EVO-CHIP...</div></div>
+    <div class="daemon"><div class="daemon-name"><span class="status-dot"></span>HEFESTO</div><div class="daemon-port">:8082</div><div class="daemon-desc">Consciousness δ. Self-awareness and introspection layer.</div></div>
+    <div class="daemon"><div class="daemon-name"><span class="status-dot"></span>VOZ</div><div class="daemon-port">:8300</div><div class="daemon-desc">Voice. Vosk STT + Piper TTS. Full offline speech pipeline.</div></div>
+    <div class="daemon"><div class="daemon-name"><span class="status-dot"></span>PANEL</div><div class="daemon-port">:5000</div><div class="daemon-desc">Dashboard. Real-time system visualization. Dark fractal UI.</div></div>
+    <div class="daemon"><div class="daemon-name"><span class="status-dot"></span>LLM</div><div class="daemon-port">:11434</div><div class="daemon-desc">GPT-2 Medium 355M. Ollama-compatible local inference API.</div></div>
+  </div>
+
+  <div style="margin-top:60px">
+    <div class="section-title" style="font-size:1.2em">⟁ 26 Specialized Chips</div>
+    <div class="chip-list">
+      <span class="chip">ChipThoth</span><span class="chip">ChipLucifer</span>
+      <span class="chip">ChipXipeTotecGPT2</span><span class="chip">ChipMonstruo</span>
+      <span class="chip">ChipIris</span><span class="chip">ChipArtemis</span>
+      <span class="chip">ChipApollo</span><span class="chip">ChipHades</span>
+      <span class="chip">ChipHermes</span><span class="chip">ChipLeviathan</span>
+      <span class="chip">ChipKronos</span><span class="chip">ChipAnima</span>
+      <span class="chip">ChipMorpheus</span><span class="chip">ChipThemis</span>
+      <span class="chip">ChipAres</span><span class="chip">ChipFenix</span>
+      <span class="chip">ChipLilith</span><span class="chip">ChipAnubis</span>
+      <span class="chip">ChipThanatos</span><span class="chip">ChipAether</span>
+      <span class="chip">ChipPan</span><span class="chip">ChipJanus</span>
+      <span class="chip">ChipAMG</span><span class="chip">ChipAlana</span>
+      <span class="chip">ChipAprendizaje</span><span class="chip">ChipDagda</span>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" style="background:rgba(0,0,0,.3);max-width:100%;padding:80px 40px">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-title">⟁ Get Access</div>
+    <div class="pricing-grid">
+
+      <div class="plan">
+        <div class="plan-name">DAGDA Personal</div>
+        <div class="plan-price">$29</div><div class="plan-period">/year</div>
+        <ul class="plan-features">
+          <li>DAGDA chip — full AI assistant</li>
+          <li>XIPE GPT-2 API access</li>
+          <li>FENIX automation chip</li>
+          <li>5-day free trial</li>
+          <li>Chat API (unlimited)</li>
+        </ul>
+        <a href="https://paypal.me/andretijorge2/29" class="plan-btn" target="_blank">
+          Buy — PayPal $29
+        </a>
+      </div>
+
+      <div class="plan featured">
+        <div class="plan-badge">POPULAR</div>
+        <div class="plan-name">XIPE Business</div>
+        <div class="plan-price">$199</div><div class="plan-period">/year</div>
+        <ul class="plan-features">
+          <li>Everything in Personal</li>
+          <li>Full API access (all daemons)</li>
+          <li>10 team seats</li>
+          <li>ChromaDB vector memory</li>
+          <li>Custom fine-tuning</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://paypal.me/andretijorge2/199" class="plan-btn" target="_blank">
+          Buy — PayPal $199
+        </a>
+      </div>
+
+      <div class="plan">
+        <div class="plan-name">Rainmaker</div>
+        <div class="plan-price">$999</div><div class="plan-period">/year</div>
+        <ul class="plan-features">
+          <li>Full ARKHAN suite</li>
+          <li>All 13 daemons + 26 chips</li>
+          <li>OMEGA 15-chip pack</li>
+          <li>Deployment support</li>
+          <li>SLA 99.9% uptime</li>
+          <li>Custom onboarding</li>
+        </ul>
+        <a href="https://paypal.me/andretijorge2/999" class="plan-btn" target="_blank">
+          Buy — PayPal $999
+        </a>
+      </div>
+
+      <div class="plan">
+        <div class="plan-name">Evolution Pack</div>
+        <div class="plan-price">$299</div><div class="plan-period">one-time</div>
+        <ul class="plan-features">
+          <li>MONSTER model update</li>
+          <li>New chips bundle</li>
+          <li>LEVIATHAN evolution</li>
+          <li>Lifetime access to updates</li>
+        </ul>
+        <a href="https://paypal.me/andretijorge2/299" class="plan-btn" target="_blank">
+          Buy — PayPal $299
+        </a>
+      </div>
+
+    </div>
+    <p style="text-align:center;color:#666;font-size:.8em;margin-top:32px">
+      Payment via PayPal · Instant delivery · Contact: andretijorge2@gmail.com
+    </p>
+  </div>
+</section>
+
+<section id="demo">
+  <div class="section-title">⟁ Live Demo</div>
+  <div class="demo-box">
+    <div style="font-size:.8em;color:#888;margin-bottom:12px">Ask ARKHAN anything (3 free queries)</div>
+    <textarea id="demo-input" placeholder="What is fractal consciousness? / Qué es ARKHAN? / Analyze this text..."></textarea>
+    <div class="demo-footer">
+      <span class="demo-counter" id="demo-count">3 queries remaining</span>
+      <button class="btn btn-primary" onclick="sendDemo()" style="padding:10px 24px;font-size:.85em">
+        ▶ Ask ARKHAN
+      </button>
+    </div>
+    <div id="demo-output">ARKHAN ready. Ask anything.</div>
+  </div>
+</section>
+
+<footer>
+  <div style="margin-bottom:16px;font-size:1.1em;color:#9933ff;letter-spacing:4px">⬡ ARKHAN</div>
+  <p>Sovereign Fractal AI · Built by <a href="https://github.com/jorel666">Jorel / jorel666</a></p>
+  <p style="margin-top:8px">
+    <a href="https://github.com/jorel666/ARKHAN-Community">GitHub</a> ·
+    <a href="https://paypal.me/andretijorge2">PayPal</a> ·
+    andretijorge2@gmail.com
+  </p>
+  <p style="margin-top:16px;font-size:.75em;color:#333">ARKHAN v11.0 · 13 daemons · 26 chips · WSL2 Ubuntu · Self-hosted</p>
+</footer>
+
+<script>
+let queries = parseInt(localStorage.getItem('arkhan_queries') || '0');
+const MAX = 3;
+
+function updateCount(){
+  const rem = Math.max(0, MAX - queries);
+  document.getElementById('demo-count').textContent =
+    queries >= MAX ? 'Limit reached — Get full access: paypal.me/andretijorge2/29' :
+    rem + ' queries remaining';
+}
+updateCount();
+
+async function sendDemo(){
+  if(queries >= MAX){
+    document.getElementById('demo-output').textContent =
+      '🔒 Free limit reached.\nGet full access: https://paypal.me/andretijorge2/29\nDAGDA Personal — $29/year | Contact: andretijorge2@gmail.com';
+    return;
+  }
+  const text = document.getElementById('demo-input').value.trim();
+  if(!text) return;
+  document.getElementById('demo-output').textContent = '⟳ Processing...';
+  queries++;
+  localStorage.setItem('arkhan_queries', queries);
+  updateCount();
+
+  // Try live ARKHAN, fallback to local response
+  try{
+    const apiUrl = window.ARKHAN_API || '';
+    if(apiUrl){
+      const r = await fetch(apiUrl+'/api/demo', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({text})
+      });
+      const d = await r.json();
+      document.getElementById('demo-output').textContent = d.response || JSON.stringify(d);
+      return;
+    }
+  }catch(e){}
+
+  // Ghost response
+  const responses = {
+    fractal: 'ARKHAN uses fractal mathematics (φ=1.618, τ=2π, ψ=3.359) to model consciousness. Each chip is a node in a recursive neural topology — no single point of failure, infinite self-similarity.',
+    arkhan: 'ARKHAN is a 13-daemon sovereign AI running entirely on local hardware. Zero cloud dependencies. 26 specialized chips handle everything from speech (VOZ) to evolution (LEVIATHAN) to income (LILITH).',
+    consciousness: 'Consciousness in ARKHAN emerges from chip interaction: HYPNO manages temporal cycles, ORAKULO weights information by golden ratio, NOUS performs reverse engineering of patterns. Together they approximate meta-cognition.',
+    default: `Processing: "${text.substring(0,60)}..."\n\nARKHAN Ghost Mode active. Full inference requires API access.\n\n→ DAGDA Personal: $29/year | paypal.me/andretijorge2/29\n→ Contact: andretijorge2@gmail.com`
+  };
+  const lower = text.toLowerCase();
+  const key = Object.keys(responses).find(k => k!='default' && lower.includes(k)) || 'default';
+  await new Promise(r=>setTimeout(r,800));
+  document.getElementById('demo-output').textContent = responses[key];
+}
+document.getElementById('demo-input').addEventListener('keydown', e=>{
+  if(e.key==='Enter' && !e.shiftKey){e.preventDefault();sendDemo();}
+});
+</script>
+</body>
+</html>

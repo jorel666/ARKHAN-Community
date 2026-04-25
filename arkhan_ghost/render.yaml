@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: arkhan-ghost
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 ghost_main.py
+    envVars:
+      - key: PAYPAL_EMAIL
+        value: andretijorge2@gmail.com
+      - key: ARKHAN_SECRET
+        value: arkhan_sovereign_2026
+      - key: DEVTO_API_KEY
+        sync: false
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ARKHAN_HOME_URL
+        sync: false
+    disk:
+      name: ghost-data
+      mountPath: /data
+      sizeGB: 1

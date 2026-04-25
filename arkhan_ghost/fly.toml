@@ -1,0 +1,21 @@
+[app]
+  name = "arkhan-ghost"
+  primary_region = "mia"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+
+[env]
+  PAYPAL_EMAIL = "andretijorge2@gmail.com"
+  ARKHAN_SECRET = "arkhan_sovereign_2026"
+
+[[mounts]]
+  source = "ghost_data"
+  destination = "/data"

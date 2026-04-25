@@ -1,0 +1,68 @@
+name: ARKHAN Ghost — Autonomous Income Engine
+
+on:
+  schedule:
+    # Corre cada 6 horas — aunque ARKHAN esté caído
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      strategy:
+        description: 'Strategy to run (all/devto/upwork/sync)'
+        default: 'all'
+
+jobs:
+  ghost_run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install httpx aiohttp beautifulsoup4 requests
+
+      - name: Run ARKHAN Ghost Strategies
+        env:
+          PAYPAL_EMAIL: ${{ secrets.PAYPAL_EMAIL || 'andretijorge2@gmail.com' }}
+          ARKHAN_HOME_URL: ${{ secrets.ARKHAN_HOME_URL }}
+          ARKHAN_SECRET: ${{ secrets.ARKHAN_SECRET || 'arkhan_sovereign_2026' }}
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          GHOST_DB: /tmp/ghost_state.db
+          STRATEGY: ${{ github.event.inputs.strategy || 'all' }}
+        run: |
+          python3 arkhan_ghost/ghost_actions.py
+
+      - name: Upload ghost state
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ghost-state-${{ github.run_number }}
+          path: /tmp/ghost_state.db
+          retention-days: 30
+
+      - name: Report to ARKHAN (if alive)
+        env:
+          ARKHAN_HOME_URL: ${{ secrets.ARKHAN_HOME_URL }}
+          ARKHAN_SECRET: ${{ secrets.ARKHAN_SECRET || 'arkhan_sovereign_2026' }}
+        run: |
+          python3 -c "
+          import os, json, urllib.request
+          home = os.getenv('ARKHAN_HOME_URL','')
+          if not home:
+              print('[REPORT] ARKHAN_HOME_URL not set — skip sync')
+              exit(0)
+          try:
+              data = json.dumps({'source':'github_actions','run':os.getenv('GITHUB_RUN_NUMBER','?'),'secret':os.getenv('ARKHAN_SECRET','')}).encode()
+              req = urllib.request.Request(home.rstrip('/')+'/api/ghost/ping', data=data,
+                    headers={'Content-Type':'application/json'})
+              with urllib.request.urlopen(req, timeout=5) as r:
+                  print('[REPORT] ARKHAN respondió:', r.read().decode()[:100])
+          except Exception as e:
+              print('[REPORT] ARKHAN offline (normal):', e)
+          "
