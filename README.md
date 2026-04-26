@@ -1,51 +1,45 @@
-# ARKHAN — Fractal AI System
+# 🧬 ARKHAN — Fractal Sovereign AI
 
-> Autonomous AI running 24/7 on a 2014 ThinkPad — No GPU, No Cloud.
+> **Live BTC:** $78,261 (+0.97%) | **ETH:** $2,366 | **SOL:** $86.89
+> *Updated every hour by ARKHAN autonomous daemon*
 
-## Live Crypto Prices
+---
 
-| Asset | Price | 24h |
-|-------|-------|-----|
-| BTC | $78,254 | +0.96% |
-| ETH | Live via @Chimeraghost_bot | — |
-| SOL | Live via @Chimeraghost_bot | — |
+## 🔐 Acceso Premium — Señales Crypto 24/7
 
-_Updated: 2026-04-26 14:10 UTC_
+### ⚡ Compra ahora — funciona inmediatamente
 
-## Get Premium Signals — $9/month
+| Plan | Precio | Link |
+|------|--------|------|
+| Starter | MX$129/mes | [Comprar](https://xipetotec.lemonsqueezy.com/checkout/buy/d5943e3e-b661-4011-a995-826847b87156) |
+| Monster AI | MX$199/año | [Comprar](https://xipetotec.lemonsqueezy.com/checkout/buy/008305a5-6a70-4ab3-806c-a27c909dd73c) |
 
-Direct crypto payment. No PayPal. No banks. No signup.
+**Pago crypto (sin intermediarios):**
+- USDT TRC20: `TWJv7sD1nTWeHFsaMDBuJEEAc62VoxPmvm`
+- BTC: `1Cg3UbFsKRpMjzivRnd2AHfvNzq4qAonFM`
+- ETH/USDT ERC20: `0x7E78a75516A6650e3DbB9c99666C2dd888539726`
 
-**USDT TRC20 (Tron — recommended):**
+Tras pagar → email: andretijorge2@gmail.com
 
+---
 
-**Bitcoin (BTC):**
+## 🤖 Telegram Bot: [@Chimeraghost_bot](https://t.me/Chimeraghost_bot)
 
+Señales crypto, análisis fractal, alertas BTC/ETH/SOL en tiempo real.
 
-**ETH / USDT ERC20:**
+---
 
+## ⚡ Arquitectura ARKHAN
 
-After paying: Message [@Chimeraghost_bot](https://t.me/Chimeraghost_bot) and send 
+```
+ZEUS  :3000  — Coordinador 25 chips
+ARES  :11438 — Cerebro fractal + Qwen2.5
+OMEGA :11440 — Fusión de memoria
+QWEN  :11436 — LLM local 3B params
+```
 
-Premium activates automatically in under 10 minutes. ARKHAN monitors wallets 24/7.
+**Stack:** Python 3.10 | SQLite | Qwen2.5:3b | 29 daemons | WSL2
 
-## What ARKHAN Does
+---
 
-- Fractal AI architecture (no transformers, no GPU)
-- Real-time BTC/ETH/SOL signals every hour
-- Autonomous income generation system
-- Self-building: writes and deploys its own tools
-
-## Architecture
-
-
-
-## API (Genesis Media)
-
-AI image + voice generation API:
-
-
-## Contact
-
-- Telegram: [@Chimeraghost_bot](https://t.me/Chimeraghost_bot)
-- Email: andretijorge2@gmail.com
+*ARKHAN es autónomo. No duerme. No para. Genera valor solo.*
