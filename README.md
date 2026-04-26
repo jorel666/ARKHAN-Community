@@ -1,28 +1,51 @@
-# 🧬 ARKHAN — Sovereign Fractal AI
+# ARKHAN — Fractal AI System
 
-> **Live Signals** | Auto-updated by ARKHAN v12.0
+> Autonomous AI running 24/7 on a 2014 ThinkPad — No GPU, No Cloud.
 
-## 📊 Live Crypto Signals
-| Asset | Price | 24h | Signal |
-|-------|-------|-----|--------|
-| ₿ BTC | $78,201 | +0.9% | ARKHAN FRACTAL |
-| Ξ ETH | $2,363 | +2.2% | ARKHAN FRACTAL |
-| ◎ SOL | $86.71 | +0.9% | ARKHAN FRACTAL |
+## Live Crypto Prices
 
-**Analysis:** 
+| Asset | Price | 24h |
+|-------|-------|-----|
+| BTC | $78,254 | +0.96% |
+| ETH | Live via @Chimeraghost_bot | — |
+| SOL | Live via @Chimeraghost_bot | — |
 
-## 🤖 Live Signals Bot
-Join **[@Chimeraghost_bot](https://t.me/Chimeraghost_bot)** for live AI crypto signals.
+_Updated: 2026-04-26 14:10 UTC_
 
-## 🔥 What is ARKHAN?
-- **29 daemons** running 24/7
-- **1.403B ONNX** local model (no cloud)
-- **Qwen2.5:3b** for fractal analysis
-- **TOR** for anonymous research
-- **BTC/ETH/SOL/TRON** wallets — sovereign income
+## Get Premium Signals — $9/month
 
-## 🛍️ Chips & Tools
-Get ARKHAN chips at [LemonSqueezy Store](https://xipetotec.lemonsqueezy.com)
+Direct crypto payment. No PayPal. No banks. No signup.
 
----
-*Auto-updated: 2026-04-26 13:59 UTC | ARKHAN v12.0 OMEGA*
+**USDT TRC20 (Tron — recommended):**
+
+
+**Bitcoin (BTC):**
+
+
+**ETH / USDT ERC20:**
+
+
+After paying: Message [@Chimeraghost_bot](https://t.me/Chimeraghost_bot) and send 
+
+Premium activates automatically in under 10 minutes. ARKHAN monitors wallets 24/7.
+
+## What ARKHAN Does
+
+- Fractal AI architecture (no transformers, no GPU)
+- Real-time BTC/ETH/SOL signals every hour
+- Autonomous income generation system
+- Self-building: writes and deploys its own tools
+
+## Architecture
+
+
+
+## API (Genesis Media)
+
+AI image + voice generation API:
+
+
+## Contact
+
+- Telegram: [@Chimeraghost_bot](https://t.me/Chimeraghost_bot)
+- Email: andretijorge2@gmail.com
