@@ -1,48 +1,45 @@
-# ARKHAN — Autonomous Fractal AI System
+# 🧬 ARKHAN — Fractal Sovereign AI
 
-> Running 24/7 on CPU. Generating income autonomously. No GPU required.
-
-## Live: BTC $79,128 | Updated 2026-04-26 19:06 UTC
-
----
-
-## Products Available Now
-
-### ARKHAN Titan Pack — $7 USD / MX$129
-[Preview](https://gist.github.com/jorel666/242e9a32e2d00894821b74c7c0c52a0e)
-
-**Includes 4 chips:**
-- arbitrage_scanner_v2.py
-- price_monitor_v2.py
-- wallet_tracker.py
-- telegram_signals_bot.py
-
-**Buy:** Pay $7 USDT TRC20 → `TWJv7sD1nTWeHFsaMDBuJEEAc62VoxPmvm`
-Then: [@Chimeraghost_bot](https://t.me/Chimeraghost_bot) → `/verificar <tx_hash>`
+> **Live BTC:** $79,151 (+2.11%) | **ETH:** $2,389 | **SOL:** $87.70
+> *Updated every hour by ARKHAN autonomous daemon*
 
 ---
 
-### ARKHAN Monster Suite — $55 USD / MX$999
-[Preview](https://gist.github.com/jorel666/074ce82e7ab758a849996a8201950da0)
+## 🔐 Acceso Premium — Señales Crypto 24/7
 
-**Includes 9 chips + 1 year support**
+### ⚡ Compra ahora — funciona inmediatamente
 
-**Buy:** Pay $55 USDT TRC20 → `TWJv7sD1nTWeHFsaMDBuJEEAc62VoxPmvm`
-Then: [@Chimeraghost_bot](https://t.me/Chimeraghost_bot) → `/verificar <tx_hash>`
+| Plan | Precio | Link |
+|------|--------|------|
+| Starter | MX$129/mes | [Comprar](https://xipetotec.lemonsqueezy.com/checkout/buy/d5943e3e-b661-4011-a995-826847b87156) |
+| Monster AI | MX$199/año | [Comprar](https://xipetotec.lemonsqueezy.com/checkout/buy/008305a5-6a70-4ab3-806c-a27c909dd73c) |
+
+**Pago crypto (sin intermediarios):**
+- USDT TRC20: `TWJv7sD1nTWeHFsaMDBuJEEAc62VoxPmvm`
+- BTC: `1Cg3UbFsKRpMjzivRnd2AHfvNzq4qAonFM`
+- ETH/USDT ERC20: `0x7E78a75516A6650e3DbB9c99666C2dd888539726`
+
+Tras pagar → email: andretijorge2@gmail.com
+
+---
+
+## 🤖 Telegram Bot: [@Chimeraghost_bot](https://t.me/Chimeraghost_bot)
+
+Señales crypto, análisis fractal, alertas BTC/ETH/SOL en tiempo real.
 
 ---
 
-## Crypto Payments (0% fees)
+## ⚡ Arquitectura ARKHAN
 
-| Method | Address |
-|--------|---------|
-| USDT TRC20 | `TWJv7sD1nTWeHFsaMDBuJEEAc62VoxPmvm` |
-| Bitcoin | `1Cg3UbFsKRpMjzivRnd2AHfvNzq4qAonFM` |
-| ETH/USDT | `0x7E78a75516A6650e3DbB9c99666C2dd888539726` |
+```
+ZEUS  :3000  — Coordinador 25 chips
+ARES  :11438 — Cerebro fractal + Qwen2.5
+OMEGA :11440 — Fusión de memoria
+QWEN  :11436 — LLM local 3B params
+```
 
-## Contact
-- Telegram: [@Chimeraghost_bot](https://t.me/Chimeraghost_bot)
-- Email: andretijorge2@gmail.com
+**Stack:** Python 3.10 | SQLite | Qwen2.5:3b | 29 daemons | WSL2
 
 ---
-*ARKHAN v13.1 | 2026-04-26*
+
+*ARKHAN es autónomo. No duerme. No para. Genera valor solo.*
