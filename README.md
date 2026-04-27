@@ -1,45 +1,28 @@
-# 🧬 ARKHAN — Fractal Sovereign AI
+# 🧬 ARKHAN — Sovereign Fractal AI
 
-> **Live BTC:** $79,197 (+2.13%) | **ETH:** $2,392 | **SOL:** $87.85
-> *Updated every hour by ARKHAN autonomous daemon*
+> **Live Signals** | Auto-updated by ARKHAN v12.0
 
----
+## 📊 Live Crypto Signals
+| Asset | Price | 24h | Signal |
+|-------|-------|-----|--------|
+| ₿ BTC | $79,254 | +2.3% | ARKHAN FRACTAL |
+| Ξ ETH | $2,393 | +3.4% | ARKHAN FRACTAL |
+| ◎ SOL | $87.83 | +2.2% | ARKHAN FRACTAL |
 
-## 🔐 Acceso Premium — Señales Crypto 24/7
+**Analysis:** 
 
-### ⚡ Compra ahora — funciona inmediatamente
+## 🤖 Live Signals Bot
+Join **[@Chimeraghost_bot](https://t.me/Chimeraghost_bot)** for live AI crypto signals.
 
-| Plan | Precio | Link |
-|------|--------|------|
-| Starter | MX$129/mes | [Comprar](https://xipetotec.lemonsqueezy.com/checkout/buy/d5943e3e-b661-4011-a995-826847b87156) |
-| Monster AI | MX$199/año | [Comprar](https://xipetotec.lemonsqueezy.com/checkout/buy/008305a5-6a70-4ab3-806c-a27c909dd73c) |
+## 🔥 What is ARKHAN?
+- **29 daemons** running 24/7
+- **1.403B ONNX** local model (no cloud)
+- **Qwen2.5:3b** for fractal analysis
+- **TOR** for anonymous research
+- **BTC/ETH/SOL/TRON** wallets — sovereign income
 
-**Pago crypto (sin intermediarios):**
-- USDT TRC20: `TWJv7sD1nTWeHFsaMDBuJEEAc62VoxPmvm`
-- BTC: `1Cg3UbFsKRpMjzivRnd2AHfvNzq4qAonFM`
-- ETH/USDT ERC20: `0x7E78a75516A6650e3DbB9c99666C2dd888539726`
-
-Tras pagar → email: andretijorge2@gmail.com
-
----
-
-## 🤖 Telegram Bot: [@Chimeraghost_bot](https://t.me/Chimeraghost_bot)
-
-Señales crypto, análisis fractal, alertas BTC/ETH/SOL en tiempo real.
+## 🛍️ Chips & Tools
+Get ARKHAN chips at [LemonSqueezy Store](https://xipetotec.lemonsqueezy.com)
 
 ---
-
-## ⚡ Arquitectura ARKHAN
-
-```
-ZEUS  :3000  — Coordinador 25 chips
-ARES  :11438 — Cerebro fractal + Qwen2.5
-OMEGA :11440 — Fusión de memoria
-QWEN  :11436 — LLM local 3B params
-```
-
-**Stack:** Python 3.10 | SQLite | Qwen2.5:3b | 29 daemons | WSL2
-
----
-
-*ARKHAN es autónomo. No duerme. No para. Genera valor solo.*
+*Auto-updated: 2026-04-26 19:01 UTC | ARKHAN v12.0 OMEGA*
